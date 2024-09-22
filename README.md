@@ -13,7 +13,7 @@ This is a Django-based API service for managing customers and orders. It include
 
 ## Installation
 
-### 1. Clone the repository
+###  Clone the repository
 
 
 https://github.com/denny254/-Django-OpenID-SMS-integration-and-CI-CD-setup.git
