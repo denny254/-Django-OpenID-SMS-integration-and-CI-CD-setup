@@ -9,16 +9,16 @@ from django.http import HttpResponseRedirect
 
 # Set up the schema view for Swagger
 schema_view = get_schema_view(
-   openapi.Info(
-      title="Customers and Orders API",
-      default_version='v1',
-      description="API documentation for managing customers and orders",
-      terms_of_service="https://www.example.com/terms/",
-      contact=openapi.Contact(email="contact@example.com"),
-      license=openapi.License(name="BSD License"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+    openapi.Info(
+        title="Customers and Orders API",
+        default_version='v1',
+        description="API documentation for managing customers and orders",
+        terms_of_service="https://www.example.com/terms/",
+        contact=openapi.Contact(email="contact@example.com"),
+        license=openapi.License(name="BSD License"),
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),  # You can change this based on your requirement
 )
 
 # Set up the router for your viewsets
@@ -34,6 +34,8 @@ urlpatterns = [
     # Admin and API routes
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+
+    # OAuth2 URLs (required for token generation)
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 
     # Swagger documentation URLs
